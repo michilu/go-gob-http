@@ -22,7 +22,6 @@ import (
 	"bytes"
 	"encoding/gob"
 	"errors"
-	"io/ioutil"
 	"net/http"
 	"reflect"
 	"testing"
