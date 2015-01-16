@@ -18,7 +18,7 @@
 
 // +build !go1.3
 
-package dvr
+package gobhttp
 
 import (
 	"net/http"
