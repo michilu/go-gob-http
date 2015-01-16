@@ -195,7 +195,7 @@ type GobRequest struct {
 }
 
 // This takes a Request object and returns a gob compatible GobRequest object.
-func newGobRequest(req *http.Request) *GobRequest {
+func NewGobRequest(req *http.Request) *GobRequest {
 	if req == nil {
 		return nil
 	}

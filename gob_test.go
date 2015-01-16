@@ -119,6 +119,6 @@ func TestGobError_GobDecode(t *testing.T) {
 func TestSimpleCoverage(t *testing.T) {
 	T := testlib.NewT(t)
 	defer T.Finish()
-	T.Equal(newGobRequest(nil), nil)
+	T.Equal(NewGobRequest(nil), nil)
 	T.Equal(newGobResponse(nil), nil)
 }
