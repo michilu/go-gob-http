@@ -35,6 +35,6 @@ func newGobRequestVS(req *http.Request, r *GobRequest) {
 
 // This call wraps copying the TLS value since it only showed up in golang
 // 1.3 and higher.
-func newGobResponseVS(resp *http.Response, r *gobResponse) {
+func newGobResponseVS(resp *http.Response, r *GobResponse) {
 	r.TLS = resp.TLS
 }

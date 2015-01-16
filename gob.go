@@ -227,7 +227,7 @@ func NewGobRequest(req *http.Request) *GobRequest {
 
 // This object wraps an http.Response object in order to make it possible to
 // gob encode it.
-type gobResponse struct {
+type GobResponse struct {
 	Status           string
 	StatusCode       int
 	Proto            string
@@ -245,13 +245,13 @@ type gobResponse struct {
 	Error gobError
 }
 
-// This takes a Response object and returns a gob compatible gobResponse object.
-func newGobResponse(resp *http.Response) *gobResponse {
+// This takes a Response object and returns a gob compatible GobResponse object.
+func newGobResponse(resp *http.Response) *GobResponse {
 	if resp == nil {
 		return nil
 	}
 
-	r := new(gobResponse)
+	r := new(GobResponse)
 	r.Status = resp.Status
 	r.StatusCode = resp.StatusCode
 	r.Proto = resp.Proto
