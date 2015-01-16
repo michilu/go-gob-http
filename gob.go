@@ -51,18 +51,18 @@ var encodableTypes map[string]bool = map[string]bool{}
 // Initialize encodableTypes
 func init() {
 	// Error return types.
-	RegisterErrorType(new(gobSafeError))
-	RegisterErrorType(new(http.ProtocolError))
-	RegisterErrorType(new(net.AddrError))
-	RegisterErrorType(new(net.DNSConfigError))
-	RegisterErrorType(new(net.DNSError))
-	RegisterErrorType(new(net.DNSError))
-	RegisterErrorType(new(net.InvalidAddrError))
-	RegisterErrorType(new(net.OpError))
-	RegisterErrorType(new(net.ParseError))
-	RegisterErrorType(new(net.UnknownNetworkError))
-	RegisterErrorType(new(url.Error))
-	RegisterErrorType(new(url.EscapeError))
+	registerErrorType(new(gobSafeError))
+	registerErrorType(new(http.ProtocolError))
+	registerErrorType(new(net.AddrError))
+	registerErrorType(new(net.DNSConfigError))
+	registerErrorType(new(net.DNSError))
+	registerErrorType(new(net.DNSError))
+	registerErrorType(new(net.InvalidAddrError))
+	registerErrorType(new(net.OpError))
+	registerErrorType(new(net.ParseError))
+	registerErrorType(new(net.UnknownNetworkError))
+	registerErrorType(new(url.Error))
+	registerErrorType(new(url.EscapeError))
 
 	// Other objects that we might end up seeing.
 	gob.Register(new(rsa.PublicKey))
@@ -76,7 +76,7 @@ func init() {
 // from the RoundTripper object. Typical use cases should not need this at all.
 // If you are using this you must do it via your modules init() otherwise
 // results can be unpredictable.
-func RegisterErrorType(err error) {
+func registerErrorType(err error) {
 	// Walk the given interface all the way down to the raw object.
 	value := reflect.ValueOf(err)
 	for value.Kind() == reflect.Interface || value.Kind() == reflect.Ptr {
