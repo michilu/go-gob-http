@@ -22,7 +22,6 @@ import (
 	"bytes"
 	"encoding/gob"
 	"errors"
-	"io/ioutil"
 	"net/http"
 	"reflect"
 	"testing"
@@ -115,24 +114,6 @@ func TestGobError_GobDecode(t *testing.T) {
 	// a simple bogus data check.
 	g := &gobError{}
 	T.ExpectError(g.GobDecode([]byte{0, 1, 2, 3}))
-}
-
-func TestGobQuery_RequestResponse(t *testing.T) {
-	T := testlib.NewT(t)
-	defer T.Finish()
-	defer func() {
-		err := recover()
-		if err == nil {
-			T.Fatalf("The expected panic didn't happen")
-		} else if _, ok := err.(*dvrFailure); !ok {
-			T.Fatalf("An unexpected panic happened: %#v", err)
-		}
-	}()
-	panicOutput = ioutil.Discard
-	gq := &gobQuery{Request: new(gobRequest)}
-	gq.Request.URL = "://"
-	gq.RequestResponse()
-	T.Fatalf("The above call should never return.")
 }
 
 func TestSimpleCoverage(t *testing.T) {
