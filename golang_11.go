@@ -34,7 +34,3 @@ func newGobRequestVS(req *http.Request, r *gobRequest) {
 // This call does nothing since golang's prior to 1.3 do not have TLS fields.
 func newGobResponseVS(resp *http.Response, r *gobResponse) {
 }
-
-// This call does nothing since golang's prior to 1.3 do not have TLS fields.
-func (g *gobQuery) requestResponseVS(r *RequestResponse) {
-}

@@ -280,21 +280,3 @@ func newGobResponse(resp *http.Response) *gobResponse {
 
 	return r
 }
-
-//
-// gobQuery wrapper
-//
-
-// This structure is used when dumping data into the recorded query file.
-// It contains the request as well as the response and error so that the
-// return can exactly match the recorded return.
-type gobQuery struct {
-	// This stores the information from the Request object.
-	Request *gobRequest
-
-	// This stores the information from the Response object.
-	Response *gobResponse
-
-	// This stores the error returned from the RoundTrip call.
-	Error gobError
-}
