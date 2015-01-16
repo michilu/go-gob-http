@@ -28,7 +28,7 @@ import (
 // prior to 1.3.
 
 // This call does nothing since golang's prior to 1.3 do not have TLS fields.
-func newGobRequestVS(req *http.Request, r *gobRequest) {
+func newGobRequestVS(req *http.Request, r *GobRequest) {
 }
 
 // This call does nothing since golang's prior to 1.3 do not have TLS fields.

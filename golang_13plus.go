@@ -29,7 +29,7 @@ import (
 
 // This call wraps copying the TLS value since it only showed up in golang
 // 1.3 and higher.
-func newGobRequestVS(req *http.Request, r *gobRequest) {
+func newGobRequestVS(req *http.Request, r *GobRequest) {
 	r.TLS = req.TLS
 }
 

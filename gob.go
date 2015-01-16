@@ -171,7 +171,7 @@ type gobRawError struct {
 
 // This is a gob encodable version of http.Request. It removes the possibility
 // that a private field can be seen and therefor return an error.
-type gobRequest struct {
+type GobRequest struct {
 	Method           string
 	URL              string
 	Proto            string
@@ -194,13 +194,13 @@ type gobRequest struct {
 	Error gobError
 }
 
-// This takes a Request object and returns a gob compatible gobRequest object.
-func newGobRequest(req *http.Request) *gobRequest {
+// This takes a Request object and returns a gob compatible GobRequest object.
+func newGobRequest(req *http.Request) *GobRequest {
 	if req == nil {
 		return nil
 	}
 
-	r := new(gobRequest)
+	r := new(GobRequest)
 	r.Method = req.Method
 	r.URL = req.URL.String()
 	r.Proto = req.Proto
