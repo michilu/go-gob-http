@@ -120,5 +120,5 @@ func TestSimpleCoverage(t *testing.T) {
 	T := testlib.NewT(t)
 	defer T.Finish()
 	T.Equal(NewGobRequest(nil), nil)
-	T.Equal(newGobResponse(nil), nil)
+	T.Equal(NewGobResponse(nil), nil)
 }

@@ -246,7 +246,7 @@ type GobResponse struct {
 }
 
 // This takes a Response object and returns a gob compatible GobResponse object.
-func newGobResponse(resp *http.Response) *GobResponse {
+func NewGobResponse(resp *http.Response) *GobResponse {
 	if resp == nil {
 		return nil
 	}
