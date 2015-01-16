@@ -38,13 +38,3 @@ func newGobRequestVS(req *http.Request, r *gobRequest) {
 func newGobResponseVS(resp *http.Response, r *gobResponse) {
 	r.TLS = resp.TLS
 }
-
-// For golang's 1.3 or higher we copy the TLS field.
-func (g *gobQuery) requestResponseVS(rr *RequestResponse) {
-	if g.Request != nil && rr.Request != nil {
-		rr.Request.TLS = g.Request.TLS
-	}
-	if g.Response != nil && rr.Response != nil {
-		rr.Response.TLS = g.Response.TLS
-	}
-}
