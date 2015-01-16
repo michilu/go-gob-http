@@ -166,20 +166,6 @@ type gobRawError struct {
 }
 
 //
-// bytes.Buffer with a Close() call.
-//
-
-// This structure is just a bytes.Buffer with a Close() method.
-type bytesBufferCloser struct {
-	bytes.Buffer
-}
-
-// Required to implement io.ReaderCloser
-func (b *bytesBufferCloser) Close() error {
-	return nil
-}
-
-//
 // Request wrapper
 //
 
