@@ -1,4 +1,8 @@
+// Copyright 2015 ENDOH takanao.
+// <https://github.com/MiCHiLU/go-gob-http>
+//
 // Copyright 2014 Orchestrate, Inc.
+// <https://github.com/orchestrate-io/dvr>
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
